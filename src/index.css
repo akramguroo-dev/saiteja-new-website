@@ -71,6 +71,8 @@ a {
   font-family: 'Manrope', sans-serif;
   font-size: 22px;
   font-weight: 800;
+  object-fit: contain; 
+  padding: 4px;
 }
 
 .brand strong,

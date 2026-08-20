@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
-
+ import logo from '../assets/logo.jpg'
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
@@ -23,7 +23,7 @@ function Navbar() {
     <>
       <header className="site-header">
         <a className="brand" href="#home">
-          <span className="brand-mark">S</span>
+          <img src={logo} alt="Saiteja Infotech" className="brand-mark" />
           <span>
             <strong>Saiteja</strong>
             <small>INFOTECH</small>
