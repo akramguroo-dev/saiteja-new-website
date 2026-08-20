@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles, Users, Code2, ShieldCheck, BrainCircuit } from 'lucide-react'
 import './index.css'
-
+import Navbar from './components/Navbar'
 const services = [
   {
     icon: Users,
@@ -27,29 +27,7 @@ const services = [
 function App() {
   return (
     <main>
-      {/* Temporary navigation — teammate's Navbar will replace this */}
-      <header className="site-header">
-        <a className="brand" href="/">
-          <span className="brand-mark">S</span>
-          <span>
-            <strong>Saiteja</strong>
-            <small>INFOTECH</small>
-          </span>
-        </a>
-
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#careers">Careers</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a className="header-cta" href="#contact">
-          Let's Talk <ArrowRight size={16} />
-        </a>
-      </header>
-
+      <Navbar />
       {/* HERO */}
       <section className="hero-section" id="home">
         <div className="hero-glow hero-glow-one" />
