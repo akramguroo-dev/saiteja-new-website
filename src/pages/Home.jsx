@@ -1,4 +1,11 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
+import {
+  ArrowRight,
+  Sparkles,
+  Users,
+  Code2,
+  ShieldCheck,
+  BrainCircuit,
+} from 'lucide-react'
 import services from '../data/services'
 
 function Home() {
