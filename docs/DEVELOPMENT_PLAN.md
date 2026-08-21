@@ -87,3 +87,28 @@ No production deployment or replacement of the existing
 WordPress website will happen before CEO approval.
 
 After CEO feedback, requirements will be revised accordingly.
+
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Button.jsx
+│   └── SectionHeading.jsx
+│
+├── layouts/
+│   └── MainLayout.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Services.jsx
+│   ├── Careers.jsx
+│   ├── Contact.jsx
+│   └── FAQ.jsx
+│
+├── data/
+│   └── services.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
