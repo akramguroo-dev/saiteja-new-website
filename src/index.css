@@ -1732,3 +1732,20 @@ section h2 span {
     gap: 8px;
   }
 }
+
+.legal-page {
+  padding: 160px 6% 100px;
+  min-height: 70vh;
+}
+
+.legal-page-content {
+  max-width: 800px;
+}
+
+.legal-page-content h1 {
+  margin-bottom: 16px;
+}
+
+.legal-page-content p {
+  max-width: 600px;
+}

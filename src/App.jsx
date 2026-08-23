@@ -1,13 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import MainLayout from './layouts/MainLayout'
+import MainLayout from "./layouts/MainLayout";
 
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Careers from './pages/Careers'
-import FAQ from './pages/FAQ'
-import Contact from './pages/Contact'
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Careers from "./pages/Careers";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function App() {
   return (
@@ -20,10 +22,12 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
