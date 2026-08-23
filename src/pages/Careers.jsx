@@ -1,38 +1,41 @@
-import { ArrowRight, Briefcase, CheckCircle2, Users } from "lucide-react";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import { ArrowRight, Briefcase, CheckCircle2, Users } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+import Button from '../components/Button'
+import SectionHeading from '../components/SectionHeading'
 
 const opportunities = [
   {
-    type: "Technology",
-    title: "Explore Technology Opportunities",
+    type: 'Technology',
+    title: 'Explore Technology Opportunities',
     description:
-      "Build your skills and work on technology-focused opportunities with growing organizations.",
+      'Build your skills and work on technology-focused opportunities with growing organizations.',
   },
   {
-    type: "People & Business",
-    title: "Explore Business Opportunities",
+    type: 'People & Business',
+    title: 'Explore Business Opportunities',
     description:
-      "Discover opportunities across recruitment, HR, business development and related functions.",
+      'Discover opportunities across recruitment, HR, business development and related functions.',
   },
   {
-    type: "Internships",
-    title: "Start Your Career Journey",
+    type: 'Internships',
+    title: 'Start Your Career Journey',
     description:
-      "Gain practical experience, develop professional skills and learn by working with real teams.",
+      'Gain practical experience, develop professional skills and learn by working with real teams.',
   },
-];
+]
 
 const benefits = [
-  "Meaningful professional opportunities",
-  "Learning and skill development",
-  "Collaborative working environment",
-  "Exposure to real-world challenges",
-];
+  'Meaningful professional opportunities',
+  'Learning and skill development',
+  'Collaborative working environment',
+  'Exposure to real-world challenges',
+]
 
 function Careers() {
   return (
     <main className="careers-page">
+      {/* HERO */}
       <section className="careers-hero">
         <div className="section-label">CAREERS</div>
 
@@ -46,31 +49,29 @@ function Careers() {
           opportunities to learn, contribute and grow.
         </p>
 
-        <a className="primary-button" href="#opportunities">
-          Explore Opportunities <ArrowRight size={18} />
-        </a>
+        <Button href="#opportunities">
+          Explore Opportunities
+        </Button>
       </section>
 
-      <section className="opportunities-section" id="opportunities">
-        <div className="section-heading-row">
-          <div>
-            <div className="section-label">OPPORTUNITIES</div>
-
-            <h2>
-              Find where
-              <span> you fit in.</span>
-            </h2>
-          </div>
-
-          <p>
-            Our opportunities will evolve as our organization and partner
-            network continues to grow.
-          </p>
-        </div>
+      {/* OPPORTUNITIES */}
+      <section
+        className="opportunities-section"
+        id="opportunities"
+      >
+        <SectionHeading
+          label="OPPORTUNITIES"
+          title="Find where"
+          highlight=" you fit in."
+          description="Our opportunities will evolve as our organization and partner network continues to grow."
+        />
 
         <div className="opportunities-grid">
           {opportunities.map((opportunity) => (
-            <article className="opportunity-card" key={opportunity.title}>
+            <article
+              className="opportunity-card"
+              key={opportunity.title}
+            >
               <div className="opportunity-icon">
                 <Briefcase size={24} />
               </div>
@@ -89,6 +90,7 @@ function Careers() {
         </div>
       </section>
 
+      {/* CULTURE */}
       <section className="career-culture">
         <div className="career-culture-visual">
           <div className="culture-circle">
@@ -120,6 +122,7 @@ function Careers() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="careers-cta">
         <div>
           <div className="section-label">DON'T SEE YOUR ROLE?</div>
@@ -129,13 +132,17 @@ function Careers() {
             <span> may still be ahead.</span>
           </h2>
 
-          <p>Send us your profile and tell us where you can make an impact.</p>
+          <p>
+            Send us your profile and tell us where you can make an impact.
+          </p>
         </div>
 
-        <Button to="/contact">Get in Touch</Button>
+        <Button to="/contact">
+          Get in Touch
+        </Button>
       </section>
     </main>
-  );
+  )
 }
 
-export default Careers;
+export default Careers

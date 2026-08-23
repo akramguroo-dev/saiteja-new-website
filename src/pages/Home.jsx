@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-import { Link } from "react-router-dom";
-
-import services from "../data/services";
+import SectionHeading from '../components/SectionHeading'
+import services from '../data/services'
 
 function Home() {
   return (
@@ -24,8 +24,8 @@ function Home() {
           </h1>
 
           <p>
-            Saiteja Infotech Private Limited delivers technology, staffing, and
-            digital solutions that help organizations move forward with
+            Saiteja Infotech Private Limited delivers technology, staffing,
+            and digital solutions that help organizations move forward with
             confidence.
           </p>
 
@@ -62,6 +62,7 @@ function Home() {
 
           <div className="floating-card card-bottom">
             <strong>∞</strong>
+
             <span>
               Possibilities
               <br />
@@ -84,12 +85,12 @@ function Home() {
 
           <div>
             <p>
-              We combine technology, talent and business understanding to create
-              solutions that are practical, scalable and built for real-world
-              impact.
+              We combine technology, talent and business understanding to
+              create solutions that are practical, scalable and built for
+              real-world impact.
             </p>
 
-            <Link className="text-link" to="/contact">
+            <Link className="text-link" to="/about">
               Discover Saiteja Infotech <ArrowRight size={17} />
             </Link>
           </div>
@@ -98,39 +99,36 @@ function Home() {
 
       {/* SERVICES */}
       <section className="services-section" id="services">
-        <div className="section-heading-row">
-          <div>
-            <div className="section-label">WHAT WE DO</div>
-
-            <h2>
-              Solutions built around <span>your goals.</span>
-            </h2>
-          </div>
-
-          <p>
-            From people and processes to technology and security, our
-            capabilities are designed to work together.
-          </p>
-        </div>
+        <SectionHeading
+          label="WHAT WE DO"
+          title="Solutions built around"
+          highlight=" your goals."
+          description="From people and processes to technology and security, our capabilities are designed to work together."
+        />
 
         <div className="services-grid">
-          {services.map(({ icon: Icon, title, description }, index) => (
-            <article className="service-card" key={title}>
-              <div className="service-number">0{index + 1}</div>
+          {services.slice(0, 4).map(
+            ({ icon: Icon, number, title, description }) => (
+              <article className="service-card" key={title}>
+                <div className="service-number">{number}</div>
 
-              <div className="service-icon">
-                <Icon size={24} strokeWidth={1.7} />
-              </div>
+                <div className="service-icon">
+                  <Icon size={24} strokeWidth={1.7} />
+                </div>
 
-              <h3>{title}</h3>
+                <h3>{title}</h3>
 
-              <p>{description}</p>
+                <p>{description}</p>
 
-              <Link to="/contact" aria-label={`Learn more about ${title}`}>
-                Learn more <ArrowRight size={16} />
-              </Link>
-            </article>
-          ))}
+                <Link
+                  to="/services"
+                  aria-label={`Learn more about ${title}`}
+                >
+                  Learn more <ArrowRight size={16} />
+                </Link>
+              </article>
+            )
+          )}
         </div>
       </section>
 
@@ -147,9 +145,9 @@ function Home() {
           </div>
 
           <p>
-            We believe the best solutions are not simply impressive — they solve
-            problems, empower people and create measurable progress for the
-            organizations behind them.
+            We believe the best solutions are not simply impressive — they
+            solve problems, empower people and create measurable progress for
+            the organizations behind them.
           </p>
         </div>
       </section>
@@ -184,8 +182,8 @@ function Home() {
             <h2>Have a challenge?</h2>
 
             <p>
-              Let's talk about how Saiteja Infotech can help turn your next idea
-              into something real.
+              Let's talk about how Saiteja Infotech can help turn your next
+              idea into something real.
             </p>
           </div>
 
@@ -198,7 +196,7 @@ function Home() {
         </div>
       </section>
     </main>
-  );
+  )
 }
 
-export default Home;
+export default Home

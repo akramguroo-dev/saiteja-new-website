@@ -1,63 +1,14 @@
-import {
-  ArrowRight,
-  BrainCircuit,
-  BriefcaseBusiness,
-  Code2,
-  GraduationCap,
-  Megaphone,
-  Users,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-const services = [
-  {
-    icon: Users,
-    number: "01",
-    title: "HR & Staffing",
-    description:
-      "Flexible workforce solutions that connect organizations with the right people and capabilities.",
-  },
-  {
-    icon: Code2,
-    number: "02",
-    title: "IT Solutions",
-    description:
-      "Technology solutions designed to help businesses improve processes, productivity and digital capabilities.",
-  },
-  {
-    icon: BrainCircuit,
-    number: "03",
-    title: "AI & Data Solutions",
-    description:
-      "Practical approaches to data and intelligent technology that turn information into business value.",
-  },
-  {
-    icon: Megaphone,
-    number: "04",
-    title: "Branding & Digital",
-    description:
-      "Creative and digital solutions that help organizations communicate their identity and reach their audience.",
-  },
-  {
-    icon: GraduationCap,
-    number: "05",
-    title: "Training & Development",
-    description:
-      "Learning and development opportunities designed to strengthen skills and prepare people for what comes next.",
-  },
-  {
-    icon: BriefcaseBusiness,
-    number: "06",
-    title: "Recruitment",
-    description:
-      "Talent acquisition support focused on finding professionals aligned with organizational needs.",
-  },
-];
+import Button from '../components/Button'
+import SectionHeading from '../components/SectionHeading'
+import services from '../data/services'
 
 function Services() {
   return (
     <main className="services-page">
+      {/* HERO */}
       <section className="services-hero">
         <div className="section-label">OUR SERVICES</div>
 
@@ -73,40 +24,43 @@ function Services() {
         </p>
       </section>
 
+      {/* SERVICES */}
       <section className="services-list-section">
         <div className="services-intro">
-          <div className="section-label">WHAT WE DO</div>
-
-          <h2>
-            One ecosystem.
-            <span> Multiple capabilities.</span>
-          </h2>
+          <SectionHeading
+            label="WHAT WE DO"
+            title="One ecosystem."
+            highlight=" Multiple capabilities."
+          />
         </div>
 
         <div className="services-detail-grid">
-          {services.map(({ icon: Icon, number, title, description }) => (
-            <article className="service-detail-card" key={title}>
-              <div className="service-detail-top">
-                <span>{number}</span>
+          {services.map(
+            ({ icon: Icon, number, title, description }) => (
+              <article className="service-detail-card" key={title}>
+                <div className="service-detail-top">
+                  <span>{number}</span>
 
-                <div className="service-detail-icon">
-                  <Icon size={26} strokeWidth={1.7} />
+                  <div className="service-detail-icon">
+                    <Icon size={26} strokeWidth={1.7} />
+                  </div>
                 </div>
-              </div>
 
-              <h3>{title}</h3>
+                <h3>{title}</h3>
 
-              <p>{description}</p>
+                <p>{description}</p>
 
-              <Link to="/contact">
-                Learn more
-                <ArrowRight size={16} />
-              </Link>
-            </article>
-          ))}
+                <Link to="/contact">
+                  Learn more
+                  <ArrowRight size={16} />
+                </Link>
+              </article>
+            )
+          )}
         </div>
       </section>
 
+      {/* CTA */}
       <section className="services-cta">
         <div>
           <div className="section-label">NEED A SOLUTION?</div>
@@ -122,10 +76,12 @@ function Services() {
           </p>
         </div>
 
-        <Button to="/contact">Start a Conversation</Button>
+        <Button to="/contact">
+          Start a Conversation
+        </Button>
       </section>
     </main>
-  );
+  )
 }
 
-export default Services;
+export default Services

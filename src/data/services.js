@@ -2,33 +2,53 @@ import {
   Users,
   Code2,
   BrainCircuit,
-  ShieldCheck,
+  Megaphone,
+  GraduationCap,
+  BriefcaseBusiness,
 } from 'lucide-react'
 
 const services = [
   {
     icon: Users,
+    number: '01',
     title: 'HR & Staffing',
     description:
-      'Flexible workforce solutions designed to connect businesses with the right talent.',
+      'Flexible workforce solutions that connect organizations with the right people and capabilities.',
   },
   {
     icon: Code2,
+    number: '02',
     title: 'IT Solutions',
     description:
-      'Modern software and technology solutions built around your business needs.',
+      'Technology solutions designed to help businesses improve processes, productivity and digital capabilities.',
   },
   {
     icon: BrainCircuit,
-    title: 'AI & Data',
+    number: '03',
+    title: 'AI & Data Solutions',
     description:
-      'Turn data and intelligent technology into practical business outcomes.',
+      'Practical approaches to data and intelligent technology that turn information into business value.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Cybersecurity',
+    icon: Megaphone,
+    number: '04',
+    title: 'Branding & Digital',
     description:
-      'Security-focused solutions that help protect your digital operations.',
+      'Creative and digital solutions that help organizations communicate their identity and reach their audience.',
+  },
+  {
+    icon: GraduationCap,
+    number: '05',
+    title: 'Training & Development',
+    description:
+      'Learning and development opportunities designed to strengthen skills and prepare people for what comes next.',
+  },
+  {
+    icon: BriefcaseBusiness,
+    number: '06',
+    title: 'Recruitment',
+    description:
+      'Talent acquisition support focused on finding professionals aligned with organizational needs.',
   },
 ]
 

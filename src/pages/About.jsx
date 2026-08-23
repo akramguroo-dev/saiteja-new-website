@@ -1,33 +1,35 @@
-import { ArrowRight, Award, Eye, Target, Users } from "lucide-react";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import { ArrowRight, Award, Eye, Target, Users } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+import Button from '../components/Button'
+import SectionHeading from '../components/SectionHeading'
 
 const milestones = [
   {
-    year: "01",
-    title: "The Beginning",
+    year: '01',
+    title: 'The Beginning',
     description:
-      "Saiteja Infotech began with a vision to bring people, technology and business opportunities closer together.",
+      'Saiteja Infotech began with a vision to bring people, technology and business opportunities closer together.',
   },
   {
-    year: "02",
-    title: "Growing Capabilities",
+    year: '02',
+    title: 'Growing Capabilities',
     description:
-      "Our capabilities expanded across staffing, technology, training and digital solutions.",
+      'Our capabilities expanded across staffing, technology, training and digital solutions.',
   },
   {
-    year: "03",
-    title: "Building Partnerships",
+    year: '03',
+    title: 'Building Partnerships',
     description:
-      "We continue to build relationships with organizations and professionals to create meaningful opportunities.",
+      'We continue to build relationships with organizations and professionals to create meaningful opportunities.',
   },
   {
-    year: "04",
-    title: "Looking Ahead",
+    year: '04',
+    title: 'Looking Ahead',
     description:
-      "Our focus remains on creating practical solutions that help businesses and people move forward.",
+      'Our focus remains on creating practical solutions that help businesses and people move forward.',
   },
-];
+]
 
 function About() {
   return (
@@ -59,6 +61,7 @@ function About() {
 
           <div className="about-floating-card">
             <Award size={18} />
+
             <span>
               Technology
               <br />
@@ -96,21 +99,12 @@ function About() {
 
       {/* MISSION / VISION */}
       <section className="mission-vision-section">
-        <div className="section-heading-row">
-          <div>
-            <div className="section-label">WHAT DRIVES US</div>
-
-            <h2>
-              Purpose behind
-              <span> every solution.</span>
-            </h2>
-          </div>
-
-          <p>
-            Our mission and vision guide how we build relationships, develop
-            capabilities and approach every challenge.
-          </p>
-        </div>
+        <SectionHeading
+          label="WHAT DRIVES US"
+          title="Purpose behind"
+          highlight=" every solution."
+          description="Our mission and vision guide how we build relationships, develop capabilities and approach every challenge."
+        />
 
         <div className="mission-vision-grid">
           <article className="purpose-card purpose-card-dark">
@@ -159,7 +153,9 @@ function About() {
           </div>
 
           <div className="leadership-content">
-            <span className="leadership-role">CHIEF EXECUTIVE OFFICER</span>
+            <span className="leadership-role">
+              CHIEF EXECUTIVE OFFICER
+            </span>
 
             <h2>
               Vision that turns
@@ -186,25 +182,19 @@ function About() {
 
       {/* TIMELINE */}
       <section className="timeline-section">
-        <div className="section-heading-row">
-          <div>
-            <div className="section-label">OUR JOURNEY</div>
-
-            <h2>
-              Growing with
-              <span> purpose.</span>
-            </h2>
-          </div>
-
-          <p>
-            A growing story shaped by people, partnerships and a commitment to
-            creating better solutions.
-          </p>
-        </div>
+        <SectionHeading
+          label="OUR JOURNEY"
+          title="Growing with"
+          highlight=" purpose."
+          description="A growing story shaped by people, partnerships and a commitment to creating better solutions."
+        />
 
         <div className="timeline">
           {milestones.map((milestone, index) => (
-            <article className="timeline-item" key={milestone.year}>
+            <article
+              className="timeline-item"
+              key={milestone.year}
+            >
               <div className="timeline-marker">
                 <span>{milestone.year}</span>
               </div>
@@ -237,10 +227,12 @@ function About() {
           </p>
         </div>
 
-        <Button href="/contact">Start a Conversation</Button>
+        <Button to="/contact">
+          Start a Conversation
+        </Button>
       </section>
     </main>
-  );
+  )
 }
 
-export default About;
+export default About

@@ -1,46 +1,43 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function Button({
   children,
-  to,
   href,
-  variant = "primary",
+  to,
+  variant = 'primary',
   icon = true,
-  type = "button",
   ...props
 }) {
   const className =
-    variant === "secondary" ? "secondary-button" : "primary-button";
-
-  const content = (
-    <>
-      {children}
-      {icon && <ArrowRight size={18} />}
-    </>
-  );
+    variant === 'secondary'
+      ? 'secondary-button'
+      : 'primary-button'
 
   if (to) {
     return (
       <Link className={className} to={to} {...props}>
-        {content}
+        {children}
+        {icon && <ArrowRight size={18} />}
       </Link>
-    );
+    )
   }
 
   if (href) {
     return (
       <a className={className} href={href} {...props}>
-        {content}
+        {children}
+        {icon && <ArrowRight size={18} />}
       </a>
-    );
+    )
   }
 
   return (
-    <button className={className} type={type} {...props}>
-      {content}
+    <button className={className} type="button" {...props}>
+      {children}
+      {icon && <ArrowRight size={18} />}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button
