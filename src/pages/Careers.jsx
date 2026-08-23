@@ -1,37 +1,34 @@
-import {
-  ArrowRight,
-  Briefcase,
-  CheckCircle2,
-  Users,
-} from 'lucide-react'
+import { ArrowRight, Briefcase, CheckCircle2, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const opportunities = [
   {
-    type: 'Technology',
-    title: 'Explore Technology Opportunities',
+    type: "Technology",
+    title: "Explore Technology Opportunities",
     description:
-      'Build your skills and work on technology-focused opportunities with growing organizations.',
+      "Build your skills and work on technology-focused opportunities with growing organizations.",
   },
   {
-    type: 'People & Business',
-    title: 'Explore Business Opportunities',
+    type: "People & Business",
+    title: "Explore Business Opportunities",
     description:
-      'Discover opportunities across recruitment, HR, business development and related functions.',
+      "Discover opportunities across recruitment, HR, business development and related functions.",
   },
   {
-    type: 'Internships',
-    title: 'Start Your Career Journey',
+    type: "Internships",
+    title: "Start Your Career Journey",
     description:
-      'Gain practical experience, develop professional skills and learn by working with real teams.',
+      "Gain practical experience, develop professional skills and learn by working with real teams.",
   },
-]
+];
 
 const benefits = [
-  'Meaningful professional opportunities',
-  'Learning and skill development',
-  'Collaborative working environment',
-  'Exposure to real-world challenges',
-]
+  "Meaningful professional opportunities",
+  "Learning and skill development",
+  "Collaborative working environment",
+  "Exposure to real-world challenges",
+];
 
 function Careers() {
   return (
@@ -45,8 +42,8 @@ function Careers() {
         </h1>
 
         <p>
-          We believe great organizations are built by great people.
-          Explore opportunities to learn, contribute and grow.
+          We believe great organizations are built by great people. Explore
+          opportunities to learn, contribute and grow.
         </p>
 
         <a className="primary-button" href="#opportunities">
@@ -84,9 +81,9 @@ function Careers() {
 
               <p>{opportunity.description}</p>
 
-              <a href="/contact">
+              <Link to="/contact">
                 Apply / Enquire <ArrowRight size={16} />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -132,17 +129,13 @@ function Careers() {
             <span> may still be ahead.</span>
           </h2>
 
-          <p>
-            Send us your profile and tell us where you can make an impact.
-          </p>
+          <p>Send us your profile and tell us where you can make an impact.</p>
         </div>
 
-        <a className="primary-button" href="/contact">
-          Get in Touch <ArrowRight size={18} />
-        </a>
+        <Button to="/contact">Get in Touch</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default Careers
+export default Careers;

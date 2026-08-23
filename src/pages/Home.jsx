@@ -1,12 +1,8 @@
-import {
-  ArrowRight,
-  Sparkles,
-  Users,
-  Code2,
-  ShieldCheck,
-  BrainCircuit,
-} from 'lucide-react'
-import services from '../data/services'
+import { ArrowRight, Sparkles } from "lucide-react";
+
+import { Link } from "react-router-dom";
+
+import services from "../data/services";
 
 function Home() {
   return (
@@ -28,8 +24,8 @@ function Home() {
           </h1>
 
           <p>
-            Saiteja Infotech Private Limited delivers technology, staffing,
-            and digital solutions that help organizations move forward with
+            Saiteja Infotech Private Limited delivers technology, staffing, and
+            digital solutions that help organizations move forward with
             confidence.
           </p>
 
@@ -38,9 +34,9 @@ function Home() {
               Explore Services <ArrowRight size={18} />
             </a>
 
-            <a className="secondary-button" href="#contact">
+            <Link className="secondary-button" to="/contact">
               Start a Conversation
-            </a>
+            </Link>
           </div>
 
           <div className="hero-trust">
@@ -88,14 +84,14 @@ function Home() {
 
           <div>
             <p>
-              We combine technology, talent and business understanding to
-              create solutions that are practical, scalable and built for
-              real-world impact.
+              We combine technology, talent and business understanding to create
+              solutions that are practical, scalable and built for real-world
+              impact.
             </p>
 
-            <a className="text-link" href="#contact">
+            <Link className="text-link" to="/contact">
               Discover Saiteja Infotech <ArrowRight size={17} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -120,9 +116,7 @@ function Home() {
         <div className="services-grid">
           {services.map(({ icon: Icon, title, description }, index) => (
             <article className="service-card" key={title}>
-              <div className="service-number">
-                0{index + 1}
-              </div>
+              <div className="service-number">0{index + 1}</div>
 
               <div className="service-icon">
                 <Icon size={24} strokeWidth={1.7} />
@@ -132,12 +126,9 @@ function Home() {
 
               <p>{description}</p>
 
-              <a
-                href="#contact"
-                aria-label={`Learn more about ${title}`}
-              >
+              <Link to="/contact" aria-label={`Learn more about ${title}`}>
                 Learn more <ArrowRight size={16} />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -156,9 +147,9 @@ function Home() {
           </div>
 
           <p>
-            We believe the best solutions are not simply impressive — they
-            solve problems, empower people and create measurable progress
-            for the organizations behind them.
+            We believe the best solutions are not simply impressive — they solve
+            problems, empower people and create measurable progress for the
+            organizations behind them.
           </p>
         </div>
       </section>
@@ -174,13 +165,13 @@ function Home() {
           </h2>
 
           <p>
-            Work with people who are building technology, solving problems
-            and shaping what comes next.
+            Work with people who are building technology, solving problems and
+            shaping what comes next.
           </p>
 
-          <a className="primary-button" href="#contact">
+          <Link className="primary-button" to="/careers">
             Explore Careers <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -193,8 +184,8 @@ function Home() {
             <h2>Have a challenge?</h2>
 
             <p>
-              Let's talk about how Saiteja Infotech can help turn your next
-              idea into something real.
+              Let's talk about how Saiteja Infotech can help turn your next idea
+              into something real.
             </p>
           </div>
 
@@ -207,7 +198,7 @@ function Home() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;

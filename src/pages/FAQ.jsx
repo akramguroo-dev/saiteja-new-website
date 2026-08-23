@@ -1,45 +1,46 @@
-import { useState } from 'react'
-import { ArrowDown, ArrowRight } from 'lucide-react'
+import { useState } from "react";
+import { ArrowDown, ArrowRight } from "lucide-react";
+import Button from "../components/Button";
 
 const faqs = [
   {
-    question: 'What services does Saiteja Infotech provide?',
+    question: "What services does Saiteja Infotech provide?",
     answer:
-      'Saiteja Infotech provides services across staffing, recruitment, IT solutions, branding, training and digital capabilities.',
+      "Saiteja Infotech provides services across staffing, recruitment, IT solutions, branding, training and digital capabilities.",
   },
   {
-    question: 'How can I discuss a business requirement?',
+    question: "How can I discuss a business requirement?",
     answer:
-      'You can contact our team through the contact form, email or other official communication channels listed on our website.',
+      "You can contact our team through the contact form, email or other official communication channels listed on our website.",
   },
   {
-    question: 'Does Saiteja Infotech provide recruitment services?',
+    question: "Does Saiteja Infotech provide recruitment services?",
     answer:
-      'Yes. Recruitment and staffing are among the key capabilities presented by Saiteja Infotech.',
+      "Yes. Recruitment and staffing are among the key capabilities presented by Saiteja Infotech.",
   },
   {
-    question: 'Can I apply for an internship or job?',
+    question: "Can I apply for an internship or job?",
     answer:
-      'Yes. Visit our Careers section to explore current opportunities and submit your profile.',
+      "Yes. Visit our Careers section to explore current opportunities and submit your profile.",
   },
   {
-    question: 'Can organizations partner with Saiteja Infotech?',
+    question: "Can organizations partner with Saiteja Infotech?",
     answer:
-      'Yes. Organizations can contact our team to discuss staffing, technology, training or other potential partnerships.',
+      "Yes. Organizations can contact our team to discuss staffing, technology, training or other potential partnerships.",
   },
   {
-    question: 'How can I contact the company?',
+    question: "How can I contact the company?",
     answer:
-      'You can use the Contact page to send an enquiry and access the company contact details.',
+      "You can use the Contact page to send an enquiry and access the company contact details.",
   },
-]
+];
 
 function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    setOpenIndex((current) => (current === index ? null : index))
-  }
+    setOpenIndex((current) => (current === index ? null : index));
+  };
 
   return (
     <main className="faq-page">
@@ -69,10 +70,13 @@ function FAQ() {
 
         <div className="faq-list">
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index
+            const isOpen = openIndex === index;
 
             return (
-              <article className={`faq-item ${isOpen ? 'open' : ''}`} key={faq.question}>
+              <article
+                className={`faq-item ${isOpen ? "open" : ""}`}
+                key={faq.question}
+              >
                 <button
                   type="button"
                   className="faq-question"
@@ -84,11 +88,7 @@ function FAQ() {
                     {faq.question}
                   </span>
 
-                  {isOpen ? (
-                    <ArrowDown size={20} />
-                  ) : (
-                    <ArrowRight size={20} />
-                  )}
+                  {isOpen ? <ArrowDown size={20} /> : <ArrowRight size={20} />}
                 </button>
 
                 {isOpen && (
@@ -97,7 +97,7 @@ function FAQ() {
                   </div>
                 )}
               </article>
-            )
+            );
           })}
         </div>
       </section>
@@ -112,12 +112,10 @@ function FAQ() {
           </h2>
         </div>
 
-        <a className="primary-button" href="/contact">
-          Contact Us <ArrowRight size={18} />
-        </a>
+        <Button to="/contact">Contact Us</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default FAQ
+export default FAQ;

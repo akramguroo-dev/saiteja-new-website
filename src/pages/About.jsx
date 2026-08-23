@@ -1,38 +1,33 @@
-import {
-  ArrowRight,
-  Award,
-  Eye,
-  Target,
-  Users,
-} from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowRight, Award, Eye, Target, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const milestones = [
   {
-    year: '01',
-    title: 'The Beginning',
+    year: "01",
+    title: "The Beginning",
     description:
-      'Saiteja Infotech began with a vision to bring people, technology and business opportunities closer together.',
+      "Saiteja Infotech began with a vision to bring people, technology and business opportunities closer together.",
   },
   {
-    year: '02',
-    title: 'Growing Capabilities',
+    year: "02",
+    title: "Growing Capabilities",
     description:
-      'Our capabilities expanded across staffing, technology, training and digital solutions.',
+      "Our capabilities expanded across staffing, technology, training and digital solutions.",
   },
   {
-    year: '03',
-    title: 'Building Partnerships',
+    year: "03",
+    title: "Building Partnerships",
     description:
-      'We continue to build relationships with organizations and professionals to create meaningful opportunities.',
+      "We continue to build relationships with organizations and professionals to create meaningful opportunities.",
   },
   {
-    year: '04',
-    title: 'Looking Ahead',
+    year: "04",
+    title: "Looking Ahead",
     description:
-      'Our focus remains on creating practical solutions that help businesses and people move forward.',
+      "Our focus remains on creating practical solutions that help businesses and people move forward.",
   },
-]
+];
 
 function About() {
   return (
@@ -48,9 +43,9 @@ function About() {
           </h1>
 
           <p>
-            Saiteja Infotech Private Limited brings together technology,
-            talent and business understanding to help organizations solve
-            problems and create new opportunities.
+            Saiteja Infotech Private Limited brings together technology, talent
+            and business understanding to help organizations solve problems and
+            create new opportunities.
           </p>
         </div>
 
@@ -86,8 +81,8 @@ function About() {
           <div className="about-profile-copy">
             <p>
               We work at the intersection of people, technology and business.
-              Our approach is centered around understanding real challenges
-              and creating solutions that are practical, scalable and useful.
+              Our approach is centered around understanding real challenges and
+              creating solutions that are practical, scalable and useful.
             </p>
 
             <p>
@@ -112,8 +107,8 @@ function About() {
           </div>
 
           <p>
-            Our mission and vision guide how we build relationships,
-            develop capabilities and approach every challenge.
+            Our mission and vision guide how we build relationships, develop
+            capabilities and approach every challenge.
           </p>
         </div>
 
@@ -164,9 +159,7 @@ function About() {
           </div>
 
           <div className="leadership-content">
-            <span className="leadership-role">
-              CHIEF EXECUTIVE OFFICER
-            </span>
+            <span className="leadership-role">CHIEF EXECUTIVE OFFICER</span>
 
             <h2>
               Vision that turns
@@ -174,15 +167,14 @@ function About() {
             </h2>
 
             <p>
-              Our leadership is focused on building a culture where
-              technology, people and business work together to create
-              sustainable growth.
+              Our leadership is focused on building a culture where technology,
+              people and business work together to create sustainable growth.
             </p>
 
             <p>
-              The CEO profile and professional message can be expanded here
-              with the approved photograph, name and biography once provided
-              by the company.
+              The CEO profile and professional message can be expanded here with
+              the approved photograph, name and biography once provided by the
+              company.
             </p>
 
             <Link className="text-link" to="/contact">
@@ -205,17 +197,14 @@ function About() {
           </div>
 
           <p>
-            A growing story shaped by people, partnerships and a commitment
-            to creating better solutions.
+            A growing story shaped by people, partnerships and a commitment to
+            creating better solutions.
           </p>
         </div>
 
         <div className="timeline">
           {milestones.map((milestone, index) => (
-            <article
-              className="timeline-item"
-              key={milestone.year}
-            >
+            <article className="timeline-item" key={milestone.year}>
               <div className="timeline-marker">
                 <span>{milestone.year}</span>
               </div>
@@ -243,17 +232,15 @@ function About() {
           </h2>
 
           <p>
-            Explore how Saiteja Infotech can support your organization's
-            next opportunity.
+            Explore how Saiteja Infotech can support your organization's next
+            opportunity.
           </p>
         </div>
 
-        <Link className="primary-button" to="/contact">
-          Start a Conversation <ArrowRight size={18} />
-        </Link>
+        <Button href="/contact">Start a Conversation</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default About
+export default About;

@@ -1,10 +1,5 @@
-import {
-  ArrowRight,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from 'lucide-react'
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Button from "../components/Button";
 
 function Contact() {
   return (
@@ -18,8 +13,8 @@ function Contact() {
         </h1>
 
         <p>
-          Have a question, project, hiring requirement or partnership idea?
-          We'd love to hear from you.
+          Have a question, project, hiring requirement or partnership idea? We'd
+          love to hear from you.
         </p>
       </section>
 
@@ -98,9 +93,7 @@ function Contact() {
             />
           </label>
 
-          <button className="primary-button" type="submit">
-            Send Message <ArrowRight size={18} />
-          </button>
+          <Button type="submit">Send Message</Button>
         </form>
       </section>
 
@@ -114,7 +107,7 @@ function Contact() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

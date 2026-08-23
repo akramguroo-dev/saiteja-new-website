@@ -6,52 +6,54 @@ import {
   GraduationCap,
   Megaphone,
   Users,
-} from 'lucide-react'
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const services = [
   {
     icon: Users,
-    number: '01',
-    title: 'HR & Staffing',
+    number: "01",
+    title: "HR & Staffing",
     description:
-      'Flexible workforce solutions that connect organizations with the right people and capabilities.',
+      "Flexible workforce solutions that connect organizations with the right people and capabilities.",
   },
   {
     icon: Code2,
-    number: '02',
-    title: 'IT Solutions',
+    number: "02",
+    title: "IT Solutions",
     description:
-      'Technology solutions designed to help businesses improve processes, productivity and digital capabilities.',
+      "Technology solutions designed to help businesses improve processes, productivity and digital capabilities.",
   },
   {
     icon: BrainCircuit,
-    number: '03',
-    title: 'AI & Data Solutions',
+    number: "03",
+    title: "AI & Data Solutions",
     description:
-      'Practical approaches to data and intelligent technology that turn information into business value.',
+      "Practical approaches to data and intelligent technology that turn information into business value.",
   },
   {
     icon: Megaphone,
-    number: '04',
-    title: 'Branding & Digital',
+    number: "04",
+    title: "Branding & Digital",
     description:
-      'Creative and digital solutions that help organizations communicate their identity and reach their audience.',
+      "Creative and digital solutions that help organizations communicate their identity and reach their audience.",
   },
   {
     icon: GraduationCap,
-    number: '05',
-    title: 'Training & Development',
+    number: "05",
+    title: "Training & Development",
     description:
-      'Learning and development opportunities designed to strengthen skills and prepare people for what comes next.',
+      "Learning and development opportunities designed to strengthen skills and prepare people for what comes next.",
   },
   {
     icon: BriefcaseBusiness,
-    number: '06',
-    title: 'Recruitment',
+    number: "06",
+    title: "Recruitment",
     description:
-      'Talent acquisition support focused on finding professionals aligned with organizational needs.',
+      "Talent acquisition support focused on finding professionals aligned with organizational needs.",
   },
-]
+];
 
 function Services() {
   return (
@@ -96,10 +98,10 @@ function Services() {
 
               <p>{description}</p>
 
-              <a href="/contact">
+              <Link to="/contact">
                 Learn more
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -115,17 +117,15 @@ function Services() {
           </h2>
 
           <p>
-            Tell us what you're trying to achieve and let's explore the
-            right approach together.
+            Tell us what you're trying to achieve and let's explore the right
+            approach together.
           </p>
         </div>
 
-        <a className="primary-button" href="/contact">
-          Start a Conversation <ArrowRight size={18} />
-        </a>
+        <Button to="/contact">Start a Conversation</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default Services
+export default Services;
