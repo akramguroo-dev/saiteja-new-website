@@ -90,25 +90,23 @@ After CEO feedback, requirements will be revised accordingly.
 
 src/
 ├── components/
-│   ├── Navbar.jsx
-│   ├── Footer.jsx
 │   ├── Button.jsx
+│   ├── Footer.jsx
+│   ├── Navbar.jsx
 │   └── SectionHeading.jsx
-│
-├── layouts/
-│   └── MainLayout.jsx
-│
-├── pages/
-│   ├── Home.jsx
-│   ├── About.jsx
-│   ├── Services.jsx
-│   ├── Careers.jsx
-│   ├── Contact.jsx
-│   └── FAQ.jsx
-│
 ├── data/
 │   └── services.js
-│
+├── layouts/
+│   └── MainLayout.jsx
+├── pages/
+│   ├── About.jsx
+│   ├── Careers.jsx
+│   ├── Contact.jsx
+│   ├── FAQ.jsx
+│   ├── Home.jsx
+│   ├── PrivacyPolicy.jsx
+│   ├── Services.jsx
+│   └── Terms.jsx
 ├── App.jsx
-├── main.jsx
-└── index.css
+├── index.css
+└── main.jsx
