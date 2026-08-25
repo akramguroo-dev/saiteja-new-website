@@ -3004,3 +3004,322 @@ h4 {
     font-size: 13px;
   }
 }
+
+/* =====================================================
+
+   SERVICE IMAGES
+
+===================================================== */
+
+/* -----------------------------------------------------
+   HOME PAGE SERVICE IMAGE
+----------------------------------------------------- */
+
+.service-image {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #0b1f3a;
+}
+
+
+/* Image */
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  transition:
+    transform 0.65s ease,
+    filter 0.45s ease;
+}
+
+
+/* Image overlay */
+
+.service-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(6, 15, 35, 0.05) 0%,
+    rgba(6, 15, 35, 0.12) 55%,
+    rgba(6, 15, 35, 0.38) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------------------
+   HOME PAGE NUMBER BADGE
+----------------------------------------------------- */
+
+.service-image-number {
+  position: absolute;
+  z-index: 5;
+
+  top: 16px;
+  left: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 50px;
+  height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  border-radius: 999px;
+
+  background: rgba(11, 31, 58, 0.72);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  line-height: 1;
+}
+
+
+/* -----------------------------------------------------
+   SERVICES PAGE DETAIL IMAGE
+----------------------------------------------------- */
+
+.service-detail-image {
+  position: relative;
+
+  width: calc(100% + 2px);
+  height: 230px;
+
+  margin: -1px -1px 24px;
+
+  overflow: hidden;
+
+  border-radius: 18px 18px 0 0;
+
+  background: #0b1f3a;
+}
+
+
+/* Detail image */
+
+.service-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.65s ease,
+    filter 0.45s ease;
+}
+
+
+/* Detail image overlay */
+
+.service-detail-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(6, 15, 35, 0.04) 0%,
+    rgba(6, 15, 35, 0.1) 55%,
+    rgba(6, 15, 35, 0.35) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------------------
+   SERVICES PAGE NUMBER BADGE
+----------------------------------------------------- */
+
+.service-detail-number {
+  position: absolute;
+  z-index: 5;
+
+  top: 16px;
+  left: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 50px;
+  height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  border-radius: 999px;
+
+  background: rgba(11, 31, 58, 0.72);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+
+   CARD CONTENT
+
+===================================================== */
+
+.service-card-content,
+.service-detail-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+
+   IMAGE HOVER EFFECT
+
+===================================================== */
+
+.service-card:hover .service-image img,
+.service-detail-card:hover .service-detail-image img {
+  transform: scale(1.07);
+
+  filter:
+    brightness(1.08)
+    saturate(1.06);
+}
+
+
+/* Slight badge animation */
+
+.service-card:hover .service-image-number,
+.service-detail-card:hover .service-detail-number {
+  background: rgba(11, 31, 58, 0.86);
+
+  border-color: rgba(255, 255, 255, 0.42);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* =====================================================
+
+   REMOVE OLD ICONS
+
+===================================================== */
+
+.service-card .service-icon,
+.service-detail-card .service-detail-icon {
+  display: none;
+}
+
+
+/* =====================================================
+
+   RESPONSIVE SERVICE IMAGES
+
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .service-image {
+    height: 180px;
+  }
+
+  .service-detail-image {
+    height: 215px;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .service-image {
+    height: 210px;
+  }
+
+  .service-detail-image {
+    height: 220px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .service-image {
+    height: 210px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .service-detail-image {
+    height: 210px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .service-image-number,
+  .service-detail-number {
+    top: 12px;
+    left: 12px;
+
+    min-width: 46px;
+    height: 34px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+}

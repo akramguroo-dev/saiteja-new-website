@@ -1,9 +1,9 @@
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import Button from '../components/Button'
-import SectionHeading from '../components/SectionHeading'
-import services from '../data/services'
+import Button from "../components/Button";
+import SectionHeading from "../components/SectionHeading";
+import services from "../data/services";
 
 function Services() {
   return (
@@ -35,17 +35,15 @@ function Services() {
         </div>
 
         <div className="services-detail-grid">
-          {services.map(
-            ({ icon: Icon, number, title, description }) => (
-              <article className="service-detail-card" key={title}>
-                <div className="service-detail-top">
-                  <span>{number}</span>
+          {services.map(({ image, number, title, description }) => (
+            <article className="service-detail-card" key={title}>
+              <div className="service-detail-image">
+                <img src={image} alt={title} />
 
-                  <div className="service-detail-icon">
-                    <Icon size={26} strokeWidth={1.7} />
-                  </div>
-                </div>
+                <span className="service-detail-number">{number}</span>
+              </div>
 
+              <div className="service-detail-content">
                 <h3>{title}</h3>
 
                 <p>{description}</p>
@@ -54,9 +52,9 @@ function Services() {
                   Learn more
                   <ArrowRight size={16} />
                 </Link>
-              </article>
-            )
-          )}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -76,12 +74,10 @@ function Services() {
           </p>
         </div>
 
-        <Button to="/contact">
-          Start a Conversation
-        </Button>
+        <Button to="/contact">Start a Conversation</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default Services
+export default Services;

@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import SectionHeading from '../components/SectionHeading'
-import services from '../data/services'
+import SectionHeading from "../components/SectionHeading";
+import services from "../data/services";
 
 function Home() {
   return (
@@ -24,8 +24,8 @@ function Home() {
           </h1>
 
           <p>
-            Saiteja Infotech Private Limited delivers technology, staffing,
-            and digital solutions that help organizations move forward with
+            Saiteja Infotech Private Limited delivers technology, staffing, and
+            digital solutions that help organizations move forward with
             confidence.
           </p>
 
@@ -85,9 +85,9 @@ function Home() {
 
           <div>
             <p>
-              We combine technology, talent and business understanding to
-              create solutions that are practical, scalable and built for
-              real-world impact.
+              We combine technology, talent and business understanding to create
+              solutions that are practical, scalable and built for real-world
+              impact.
             </p>
 
             <Link className="text-link" to="/about">
@@ -107,28 +107,25 @@ function Home() {
         />
 
         <div className="services-grid">
-          {services.slice(0, 4).map(
-            ({ icon: Icon, number, title, description }) => (
-              <article className="service-card" key={title}>
-                <div className="service-number">{number}</div>
+          {services.slice(0, 4).map(({ image, number, title, description }) => (
+            <article className="service-card" key={title}>
+              <div className="service-image">
+                <img src={image} alt={title} />
 
-                <div className="service-icon">
-                  <Icon size={24} strokeWidth={1.7} />
-                </div>
+                <span className="service-image-number">{number}</span>
+              </div>
 
+              <div className="service-card-content">
                 <h3>{title}</h3>
 
                 <p>{description}</p>
 
-                <Link
-                  to="/services"
-                  aria-label={`Learn more about ${title}`}
-                >
+                <Link to="/services" aria-label={`Learn more about ${title}`}>
                   Learn more <ArrowRight size={16} />
                 </Link>
-              </article>
-            )
-          )}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -145,9 +142,9 @@ function Home() {
           </div>
 
           <p>
-            We believe the best solutions are not simply impressive — they
-            solve problems, empower people and create measurable progress for
-            the organizations behind them.
+            We believe the best solutions are not simply impressive — they solve
+            problems, empower people and create measurable progress for the
+            organizations behind them.
           </p>
         </div>
       </section>
@@ -182,8 +179,8 @@ function Home() {
             <h2>Have a challenge?</h2>
 
             <p>
-              Let's talk about how Saiteja Infotech can help turn your next
-              idea into something real.
+              Let's talk about how Saiteja Infotech can help turn your next idea
+              into something real.
             </p>
           </div>
 
@@ -196,7 +193,7 @@ function Home() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;
