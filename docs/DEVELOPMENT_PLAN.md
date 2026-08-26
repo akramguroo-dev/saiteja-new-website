@@ -88,16 +88,32 @@ WordPress website will happen before CEO approval.
 
 After CEO feedback, requirements will be revised accordingly.
 
+## Project Folder Structure
+
+```text
 src/
+├── assets/
+│   └── services/
+│       ├── hr-staffing.jpg
+│       ├── it-solutions.jpg
+│       ├── ai-data-solutions.jpg
+│       ├── branding-digital.jpg
+│       ├── training-development.jpg
+│       └── recruitment.jpg
+│
 ├── components/
 │   ├── Button.jsx
 │   ├── Footer.jsx
 │   ├── Navbar.jsx
 │   └── SectionHeading.jsx
+│
 ├── data/
+│   ├── contact.js
 │   └── services.js
+│
 ├── layouts/
 │   └── MainLayout.jsx
+│
 ├── pages/
 │   ├── About.jsx
 │   ├── Careers.jsx
@@ -107,6 +123,8 @@ src/
 │   ├── PrivacyPolicy.jsx
 │   ├── Services.jsx
 │   └── Terms.jsx
+│
 ├── App.jsx
 ├── index.css
 └── main.jsx
+```
