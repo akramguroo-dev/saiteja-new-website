@@ -1,5 +1,15 @@
-import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaTelegramPlane,
+} from "react-icons/fa";
+
 import { Link } from "react-router-dom";
+import { CONTACT_DETAILS } from "../data/contact";
 
 const FOOTER_LINKS = {
   Company: [
@@ -10,9 +20,31 @@ const FOOTER_LINKS = {
   ],
 
   Connect: [
-    { label: "Contact Us", to: "/contact" },
-    { label: "LinkedIn", href: "#" },
-    { label: "WhatsApp", href: "#" },
+    {
+      label: "LinkedIn",
+      href: CONTACT_DETAILS.social.linkedin,
+      icon: FaLinkedinIn,
+    },
+    {
+      label: "Instagram",
+      href: CONTACT_DETAILS.social.instagram,
+      icon: FaInstagram,
+    },
+    {
+      label: "Facebook",
+      href: CONTACT_DETAILS.social.facebook,
+      icon: FaFacebookF,
+    },
+    {
+      label: "YouTube",
+      href: CONTACT_DETAILS.social.youtube,
+      icon: FaYoutube,
+    },
+    {
+      label: "Telegram",
+      href: CONTACT_DETAILS.social.telegram,
+      icon: FaTelegramPlane,
+    },
   ],
 };
 
@@ -20,6 +52,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-main">
+        {/* BRAND */}
         <div className="footer-brand">
           <Link className="brand footer-logo" to="/">
             <span className="brand-mark">S</span>
@@ -37,51 +70,83 @@ function Footer() {
 
           <a
             className="footer-contact-link"
-            href="mailto:saitejainfotechprivatelimited@gmail.com"
+            href={`mailto:${CONTACT_DETAILS.email}`}
           >
             <Mail size={16} />
-            saitejainfotechprivatelimited@gmail.com
+            {CONTACT_DETAILS.email}
+          </a>
+
+          <a
+            className="footer-contact-link"
+            href={CONTACT_DETAILS.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} />
+            Chat with us on WhatsApp
           </a>
         </div>
 
+        {/* LINKS */}
         <div className="footer-links">
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading} className="footer-column">
               <h3>{heading}</h3>
 
-              {links.map((link) =>
-                link.to ? (
+              {links.map((link) => {
+                const Icon = link.icon;
+
+                return link.to ? (
                   <Link key={link.label} to={link.to}>
                     {link.label}
                   </Link>
                 ) : (
-                  <a key={link.label} href={link.href}>
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {Icon && <Icon size={14} />}
+
                     {link.label}
-                    {link.label === "LinkedIn" && <ArrowUpRight size={14} />}
+
+                    <ArrowUpRight size={14} />
                   </a>
-                ),
-              )}
+                );
+              })}
             </div>
           ))}
         </div>
 
+        {/* CONTACT DETAILS */}
         <div className="footer-details">
           <h3>Get in touch</h3>
 
-          <a href="tel:+910000000000">
+          <a href={`tel:${CONTACT_DETAILS.phone}`}>
             <Phone size={16} />
-            +91 XXXXX XXXXX
+            {CONTACT_DETAILS.phoneDisplay}
           </a>
 
-          <div>
+          <a
+            href={CONTACT_DETAILS.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} />
+            WhatsApp
+          </a>
+
+          <a
+            href={CONTACT_DETAILS.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-address"
+          >
             <MapPin size={16} />
 
-            <span>
-              Saiteja Infotech Private Limited
-              <br />
-              India
-            </span>
-          </div>
+            <span>{CONTACT_DETAILS.address}</span>
+          </a>
         </div>
       </div>
 

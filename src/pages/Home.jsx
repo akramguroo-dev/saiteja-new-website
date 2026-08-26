@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CONTACT_DETAILS } from "../data/contact";
 
 import SectionHeading from "../components/SectionHeading";
 import services from "../data/services";
@@ -186,7 +187,7 @@ function Home() {
 
           <a
             className="primary-button"
-            href="mailto:saitejainfotechprivatelimited@gmail.com"
+            href={`mailto:${CONTACT_DETAILS.email}`}
           >
             Contact Us <ArrowRight size={18} />
           </a>

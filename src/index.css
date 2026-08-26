@@ -3323,3 +3323,96 @@ h4 {
   }
 
 }
+
+/* =====================================================
+   CONTACT DETAILS
+===================================================== */
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.contact-detail-item:hover {
+  transform: translateX(4px);
+}
+
+.contact-detail-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contact-detail-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-detail-item small {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.contact-detail-item span {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   CONTACT MAP
+===================================================== */
+
+.contact-map {
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--border-color, rgba(20, 30, 50, 0.12));
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+  border: 0;
+}
+
+/* =====================================================
+   FOOTER SOCIAL LINKS
+===================================================== */
+
+.footer-column a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-column a svg {
+  flex-shrink: 0;
+}
+
+.footer-column a svg:last-child {
+  margin-left: auto;
+}
+
+.footer-address {
+  align-items: flex-start !important;
+}
+
+.footer-address svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-address span {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}

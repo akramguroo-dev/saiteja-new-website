@@ -1,9 +1,38 @@
-import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
+
 import Button from "../components/Button";
+import { CONTACT_DETAILS } from "../data/contact";
 
 function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    const emailSubject = encodeURIComponent(
+      subject || "New enquiry from Saiteja Infotech website",
+    );
+
+    const emailBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    );
+
+    window.location.href = `mailto:${CONTACT_DETAILS.email}?subject=${emailSubject}&body=${emailBody}`;
+  };
+
   return (
     <main className="contact-page">
+      {/* HERO */}
       <section className="contact-hero">
         <div className="section-label">CONTACT US</div>
 
@@ -18,6 +47,7 @@ function Contact() {
         </p>
       </section>
 
+      {/* CONTACT CONTENT */}
       <section className="contact-main">
         <div className="contact-information">
           <div className="section-label">GET IN TOUCH</div>
@@ -33,77 +63,128 @@ function Contact() {
           </p>
 
           <div className="contact-details">
-            <a href="mailto:saitejainfotechprivatelimited@gmail.com">
+            {/* EMAIL */}
+            <a
+              href={`mailto:${CONTACT_DETAILS.email}`}
+              className="contact-detail-item"
+            >
               <Mail size={20} />
+
               <div>
                 <small>Email</small>
-                <span>saitejainfotechprivatelimited@gmail.com</span>
+                <span>{CONTACT_DETAILS.email}</span>
               </div>
             </a>
 
-            <a href="tel:+919999999999">
+            {/* PHONE */}
+            <a
+              href={`tel:${CONTACT_DETAILS.phone}`}
+              className="contact-detail-item"
+            >
               <Phone size={20} />
+
               <div>
                 <small>Phone</small>
-                <span>Contact number to be confirmed</span>
+                <span>{CONTACT_DETAILS.phoneDisplay}</span>
               </div>
             </a>
 
-            <div>
-              <MapPin size={20} />
-              <div>
-                <small>Office</small>
-                <span>Office address to be confirmed</span>
-              </div>
-            </div>
-
-            <a href="#">
+            {/* WHATSAPP */}
+            <a
+              href={CONTACT_DETAILS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-detail-item"
+            >
               <MessageCircle size={20} />
+
               <div>
                 <small>WhatsApp</small>
-                <span>Connect with our team</span>
+                <span>Chat with our team</span>
+              </div>
+            </a>
+
+            {/* ADDRESS */}
+            <a
+              href={CONTACT_DETAILS.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-detail-item"
+            >
+              <MapPin size={20} />
+
+              <div>
+                <small>Office</small>
+                <span>{CONTACT_DETAILS.address}</span>
               </div>
             </a>
           </div>
         </div>
 
-        <form className="contact-form">
+        {/* CONTACT FORM */}
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <label>
               Name
-              <input type="text" placeholder="Your name" />
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
             </label>
 
             <label>
               Email
-              <input type="email" placeholder="you@example.com" />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
             </label>
           </div>
 
           <label>
             Subject
-            <input type="text" placeholder="How can we help?" />
+
+            <input
+              type="text"
+              name="subject"
+              placeholder="How can we help?"
+              required
+            />
           </label>
 
           <label>
             Message
+
             <textarea
+              name="message"
               rows="6"
               placeholder="Tell us a little about your requirement..."
+              required
             />
           </label>
 
-          <Button type="submit">Send Message</Button>
+          <Button type="submit">
+            Send Message
+          </Button>
         </form>
       </section>
 
+      {/* MAP */}
       <section className="map-section">
-        <div className="map-placeholder">
-          <MapPin size={30} />
-          <span>Google Maps integration</span>
-          <small>
-            Replace this placeholder with the approved office location.
-          </small>
+        <div className="contact-map">
+          <iframe
+            title="Saiteja Infotech Office Location"
+            src={CONTACT_DETAILS.mapEmbedUrl}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
     </main>
