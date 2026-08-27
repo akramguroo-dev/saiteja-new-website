@@ -92,7 +92,10 @@ After CEO feedback, requirements will be revised accordingly.
 
 ```text
 src/
+
 ├── assets/
+│   ├── logo.png
+│   │
 │   └── services/
 │       ├── hr-staffing.jpg
 │       ├── it-solutions.jpg
@@ -105,6 +108,7 @@ src/
 │   ├── Button.jsx
 │   ├── Footer.jsx
 │   ├── Navbar.jsx
+│   ├── ScrollToTop.jsx
 │   └── SectionHeading.jsx
 │
 ├── data/
@@ -128,3 +132,4 @@ src/
 ├── index.css
 └── main.jsx
 ```
+
