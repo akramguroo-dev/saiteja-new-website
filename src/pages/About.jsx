@@ -1,35 +1,36 @@
-import { ArrowRight, Award, Eye, Target, Users } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowRight, Award, Eye, Target, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import Button from '../components/Button'
-import SectionHeading from '../components/SectionHeading'
+import Button from "../components/Button";
+import SectionHeading from "../components/SectionHeading";
+import companyLogo from "../assets/logo.png";
 
 const milestones = [
   {
-    year: '01',
-    title: 'The Beginning',
+    year: "01",
+    title: "The Beginning",
     description:
-      'Saiteja Infotech began with a vision to bring people, technology and business opportunities closer together.',
+      "Saiteja Infotech Private Limited began with a vision to bring people, technology and business opportunities closer together.",
   },
   {
-    year: '02',
-    title: 'Growing Capabilities',
+    year: "02",
+    title: "Growing Capabilities",
     description:
-      'Our capabilities expanded across staffing, technology, training and digital solutions.',
+      "Our capabilities expanded across staffing, technology, training and digital solutions.",
   },
   {
-    year: '03',
-    title: 'Building Partnerships',
+    year: "03",
+    title: "Building Partnerships",
     description:
-      'We continue to build relationships with organizations and professionals to create meaningful opportunities.',
+      "We continue to build relationships with organizations and professionals to create meaningful opportunities.",
   },
   {
-    year: '04',
-    title: 'Looking Ahead',
+    year: "04",
+    title: "Looking Ahead",
     description:
-      'Our focus remains on creating practical solutions that help businesses and people move forward.',
+      "Our focus remains on creating practical solutions that help businesses and people move forward.",
   },
-]
+];
 
 function About() {
   return (
@@ -37,7 +38,9 @@ function About() {
       {/* PAGE HERO */}
       <section className="about-hero">
         <div className="about-hero-content">
-          <div className="section-label">ABOUT SAITEJA INFOTECH</div>
+          <div className="section-label">
+            ABOUT SAITEJA INFOTECH PRIVATE LIMITED
+          </div>
 
           <h1>
             People, technology,
@@ -56,7 +59,11 @@ function About() {
           <div className="about-orbit about-orbit-two" />
 
           <div className="about-orbit-core">
-            <span>S</span>
+            <img
+              src={companyLogo}
+              alt=""
+              className="about-company-logo"
+            />
           </div>
 
           <div className="about-floating-card">
@@ -191,10 +198,7 @@ function About() {
 
         <div className="timeline">
           {milestones.map((milestone, index) => (
-            <article
-              className="timeline-item"
-              key={milestone.year}
-            >
+            <article className="timeline-item" key={milestone.year}>
               <div className="timeline-marker">
                 <span>{milestone.year}</span>
               </div>
@@ -222,17 +226,15 @@ function About() {
           </h2>
 
           <p>
-            Explore how Saiteja Infotech can support your organization's next
-            opportunity.
+            Explore how Saiteja Infotech Private Limited can support your
+            organization's next opportunity.
           </p>
         </div>
 
-        <Button to="/contact">
-          Start a Conversation
-        </Button>
+        <Button to="/contact">Start a Conversation</Button>
       </section>
     </main>
-  )
+  );
 }
 
-export default About
+export default About;

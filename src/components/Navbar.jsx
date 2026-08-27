@@ -2,6 +2,8 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import companyLogo from "../assets/logo.png";
+
 const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
@@ -18,12 +20,21 @@ function Navbar() {
 
   return (
     <header className="site-header">
-      <Link className="brand" to="/" onClick={closeMenu}>
-        <span className="brand-mark">S</span>
+      <Link
+        className="brand"
+        to="/"
+        onClick={closeMenu}
+        aria-label="SAITEJA INFOTECH PRIVATE LIMITED Home"
+      >
+        <img
+          src={companyLogo}
+          alt="SAITEJA INFOTECH PRIVATE LIMITED"
+          className="brand-logo-image"
+        />
 
-        <span>
-          <strong>Saiteja</strong>
-          <small>INFOTECH</small>
+        <span className="brand-name">
+          SAITEJA INFOTECH
+          <small>PRIVATE LIMITED</small>
         </span>
       </Link>
 

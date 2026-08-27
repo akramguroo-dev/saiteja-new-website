@@ -1,4 +1,10 @@
-import { ArrowUpRight, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 
 import {
   FaLinkedinIn,
@@ -9,6 +15,8 @@ import {
 } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
+
+import companyLogo from "../assets/logo.png";
 import { CONTACT_DETAILS } from "../data/contact";
 
 const FOOTER_LINKS = {
@@ -54,12 +62,20 @@ function Footer() {
       <div className="footer-main">
         {/* BRAND */}
         <div className="footer-brand">
-          <Link className="brand footer-logo" to="/">
-            <span className="brand-mark">S</span>
+          <Link
+            className="brand footer-logo"
+            to="/"
+            aria-label="SAITEJA INFOTECH PRIVATE LIMITED Home"
+          >
+            <img
+              src={companyLogo}
+              alt="SAITEJA INFOTECH PRIVATE LIMITED"
+              className="brand-logo-image"
+            />
 
-            <span>
-              <strong>Saiteja</strong>
-              <small>INFOTECH</small>
+            <span className="brand-name">
+              SAITEJA INFOTECH
+              <small>PRIVATE LIMITED</small>
             </span>
           </Link>
 
@@ -152,7 +168,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <span>
-          © {new Date().getFullYear()} Saiteja Infotech Private Limited. All
+          © {new Date().getFullYear()} SAITEJA INFOTECH PRIVATE LIMITED. All
           rights reserved.
         </span>
 

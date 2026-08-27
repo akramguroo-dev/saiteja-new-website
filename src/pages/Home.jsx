@@ -1,5 +1,7 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import companyLogo from "../assets/logo.png";
 import { CONTACT_DETAILS } from "../data/contact";
 
 import SectionHeading from "../components/SectionHeading";
@@ -25,7 +27,7 @@ function Home() {
           </h1>
 
           <p>
-            Saiteja Infotech Private Limited delivers technology, staffing, and
+            SAITEJA INFOTECH PRIVATE LIMITED delivers technology, staffing, and
             digital solutions that help organizations move forward with
             confidence.
           </p>
@@ -50,10 +52,12 @@ function Home() {
         </div>
 
         <div className="hero-visual" aria-hidden="true">
-          <div className="orb orb-main">
-            <div className="orb-core">
-              <span>S</span>
-            </div>
+          <div className="hero-logo-container">
+            <img
+              src={companyLogo}
+              alt=""
+              className="hero-company-logo"
+            />
           </div>
 
           <div className="floating-card card-top">
@@ -92,7 +96,8 @@ function Home() {
             </p>
 
             <Link className="text-link" to="/about">
-              Discover Saiteja Infotech <ArrowRight size={17} />
+              Discover SAITEJA INFOTECH PRIVATE LIMITED{" "}
+              <ArrowRight size={17} />
             </Link>
           </div>
         </div>
@@ -180,8 +185,8 @@ function Home() {
             <h2>Have a challenge?</h2>
 
             <p>
-              Let's talk about how Saiteja Infotech can help turn your next idea
-              into something real.
+              Let's talk about how SAITEJA INFOTECH PRIVATE LIMITED can help
+              turn your next idea into something real.
             </p>
           </div>
 
