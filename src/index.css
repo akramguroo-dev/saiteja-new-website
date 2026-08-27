@@ -141,46 +141,32 @@ h4 {
   gap: 10px;
 }
 
-.brand-mark {
-  width: 40px;
-  height: 40px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 10px;
-
-  background: linear-gradient(
-    135deg,
-    var(--orange),
-    #8DA3F5
-  );
-
-  color: var(--navy);
-
-  font-family: "Sora", sans-serif;
-  font-size: 22px;
-  font-weight: 800;
+.brand-logo-image {
+  height: 42px;
+  width: auto;
 
   object-fit: contain;
-  padding: 4px;
+  flex-shrink: 0;
 }
 
-.brand strong,
-.brand small {
-  display: block;
-}
+.brand-name {
+  display: flex;
+  flex-direction: column;
 
-.brand strong {
   font-family: "Sora", sans-serif;
   font-size: 15px;
+  font-weight: 700;
+  line-height: 1.15;
   letter-spacing: 0.3px;
+
+  color: inherit;
 }
 
-.brand small {
-  margin-top: 2px;
+.brand-name small {
+  margin-top: 3px;
 
   font-size: 8px;
+  font-weight: 600;
   letter-spacing: 2.5px;
 
   opacity: 0.65;
@@ -484,54 +470,32 @@ h4 {
   place-items: center;
 }
 
-.orb {
-  width: 370px;
-  height: 370px;
-
-  border-radius: 50%;
+.hero-logo-container {
+  width: 380px;
+  height: 380px;
 
   display: grid;
   place-items: center;
 
-  background:
-    radial-gradient(
-      circle at 35% 30%,
-      #6C5CE7,
-      #3B5BDB 35%,
-      #0B1220 72%
-    );
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(59, 91, 219, 0.16),
+    transparent 70%
+  );
 
-  box-shadow:
-    0 0 90px rgba(59, 91, 219, 0.35),
-    inset 0 0 60px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 90px rgba(59, 91, 219, 0.22);
+  border-radius: 50%;
 
   animation: float 6s ease-in-out infinite;
 }
 
-.orb-core {
-  width: 135px;
-  height: 135px;
+.hero-company-logo {
+  width: 300px;
+  max-width: 80%;
 
-  border-radius: 35%;
+  object-fit: contain;
 
-  display: grid;
-  place-items: center;
-
-  transform: rotate(-8deg);
-
-  background: rgba(255, 255, 255, 0.1);
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
-  backdrop-filter: blur(15px);
-}
-
-.orb-core span {
-  transform: rotate(8deg);
-
-  font-family: "Sora", sans-serif;
-  font-size: 70px;
-  font-weight: 800;
+  filter: drop-shadow(0 20px 45px rgba(11, 18, 32, 0.3));
 }
 
 .floating-card {
@@ -951,21 +915,14 @@ h4 {
 
   display: grid;
   place-items: center;
-
-  border-radius: 22px;
-
-  background: var(--navy-glow);
-
-  color: white;
-
-  box-shadow: 0 25px 60px rgba(11, 18, 32, 0.2);
 }
 
-.about-orbit-core span {
-  font-family: "Sora", sans-serif;
+.about-company-logo {
+  width: 76px;
 
-  font-size: 60px;
-  font-weight: 800;
+  object-fit: contain;
+
+  filter: drop-shadow(0 15px 30px rgba(11, 18, 32, 0.18));
 }
 
 .about-floating-card {
@@ -2002,11 +1959,15 @@ h4 {
     padding: 0 5%;
   }
 
-  .brand strong {
+  .brand-logo-image {
+    height: 34px;
+  }
+
+  .brand-name {
     font-size: 13px;
   }
 
-  .brand small {
+  .brand-name small {
     font-size: 7px;
   }
 
