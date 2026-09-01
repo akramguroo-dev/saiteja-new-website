@@ -1,8 +1,9 @@
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import companyLogo from "../assets/logo.png";
+import Button from "./Button";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -46,10 +47,9 @@ function Navbar() {
         ))}
       </nav>
 
-      <Link className="header-cta" to="/contact">
-        Let's Talk
-        <ArrowRight size={16} />
-      </Link>
+      <Button to="/quotation">
+        Get In Touch
+      </Button>
 
       <button
         type="button"
@@ -68,10 +68,13 @@ function Navbar() {
           </Link>
         ))}
 
-        <Link className="mobile-cta" to="/contact" onClick={closeMenu}>
-          Let's Talk
-          <ArrowRight size={16} />
-        </Link>
+        <Button
+          to="/quotation"
+          className="mobile-cta"
+          onClick={closeMenu}
+        >
+          Get In Touch
+        </Button>
       </div>
     </header>
   );
