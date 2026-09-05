@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   User,
   Mail,
@@ -10,10 +12,71 @@ import {
 } from "lucide-react";
 
 function Quotation() {
-  const handleSubmit = (event) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    budget: "",
+    timeline: "",
+    projectDetails: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Backend integration will be added later.
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    // ...
+
+    try {
+      const response = await fetch("http://localhost:8080/api/quotations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit quotation");
+      }
+
+      setSuccessMessage(
+        "Your quotation request has been submitted successfully.",
+      );
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        budget: "",
+        timeline: "",
+        projectDetails: "",
+      });
+    } catch (error) {
+      console.error("Quotation submission error:", error);
+
+      setErrorMessage("Unable to submit your request. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -49,6 +112,8 @@ function Quotation() {
               name="name"
               type="text"
               placeholder="John Doe"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
           </div>
@@ -65,6 +130,8 @@ function Quotation() {
               name="email"
               type="email"
               placeholder="john@company.com"
+              value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -81,6 +148,8 @@ function Quotation() {
               name="phone"
               type="tel"
               placeholder="+1 (555) 000-0000"
+              value={formData.phone}
+              onChange={handleChange}
               required
             />
           </div>
@@ -95,16 +164,15 @@ function Quotation() {
             <select
               id="projectType"
               name="projectType"
-              defaultValue=""
+              value={formData.projectType}
+              onChange={handleChange}
               required
             >
               <option value="" disabled>
                 Select project type
               </option>
               <option value="web-development">Web Development</option>
-              <option value="software-development">
-                Software Development
-              </option>
+              <option value="software-development">Software Development</option>
               <option value="it-solutions">IT Solutions</option>
               <option value="ai-data-solutions">AI & Data Solutions</option>
               <option value="digital-services">Digital Services</option>
@@ -120,7 +188,13 @@ function Quotation() {
                 Budget Range
               </label>
 
-              <select id="budget" name="budget" defaultValue="" required>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                required
+              >
                 <option value="" disabled>
                   Select budget range
                 </option>
@@ -138,7 +212,13 @@ function Quotation() {
                 Timeline
               </label>
 
-              <select id="timeline" name="timeline" defaultValue="" required>
+              <select
+                id="timeline"
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleChange}
+                required
+              >
                 <option value="" disabled>
                   Select timeline
                 </option>
@@ -160,17 +240,30 @@ function Quotation() {
 
             <textarea
               id="details"
-              name="details"
+              name="projectDetails"
               rows="5"
               placeholder="Describe your project requirements, goals, and any specific features you need..."
+              value={formData.projectDetails}
+              onChange={handleChange}
               required
             />
           </div>
 
           {/* SUBMIT */}
-          <button className="quotation-submit" type="submit">
+          {successMessage && (
+            <p className="quotation-success">{successMessage}</p>
+          )}
+
+          {errorMessage && <p className="quotation-error">{errorMessage}</p>}
+
+          <button
+            className="quotation-submit"
+            type="submit"
+            disabled={isSubmitting}
+          >
             <Send size={16} />
-            Request Quote
+
+            {isSubmitting ? "Submitting..." : "Request Quote"}
           </button>
         </form>
       </section>
