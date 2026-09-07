@@ -1,33 +1,62 @@
-import {
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { useState } from "react";
+
+import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 
 import Button from "../components/Button";
 import { CONTACT_DETAILS } from "../data/contact";
 
 function Contact() {
-  const handleSubmit = (event) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
 
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
 
-    const emailSubject = encodeURIComponent(
-      subject || "New enquiry from Saiteja Infotech website",
-    );
+    const formData = new FormData(form);
 
-    const emailBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
+    const contactData = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
 
-    window.location.href = `mailto:${CONTACT_DETAILS.email}?subject=${emailSubject}&body=${emailBody}`;
+    try {
+      const response = await fetch("http://localhost:8080/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit contact message");
+      }
+
+      setSuccessMessage(
+        "Your message has been sent successfully. We'll get back to you soon.",
+      );
+
+      setErrorMessage("");
+
+      form.reset();
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+
+      setSuccessMessage("");
+
+      setErrorMessage("Unable to send your message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -126,18 +155,11 @@ function Contact() {
           <div className="form-row">
             <label>
               Name
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
-              />
+              <input type="text" name="name" placeholder="Your name" required />
             </label>
 
             <label>
               Email
-
               <input
                 type="email"
                 name="email"
@@ -149,7 +171,6 @@ function Contact() {
 
           <label>
             Subject
-
             <input
               type="text"
               name="subject"
@@ -160,7 +181,6 @@ function Contact() {
 
           <label>
             Message
-
             <textarea
               name="message"
               rows="6"
@@ -169,8 +189,14 @@ function Contact() {
             />
           </label>
 
-          <Button type="submit">
-            Send Message
+          {successMessage && (
+            <p className="contact-success">{successMessage}</p>
+          )}
+
+          {errorMessage && <p className="contact-error">{errorMessage}</p>}
+
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </section>
