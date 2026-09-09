@@ -735,9 +735,6 @@ maintainable by another developer.
 * Current functionality
 * Remaining work
 * AWS deployment plan
-* Git handover
-* Database handover
-* Security considerations
 
 ### Project Handover
 
@@ -758,7 +755,6 @@ Documents:
 * Remaining work
 * AWS plan
 * Production considerations
-* Git handover
 
 ### Database Documentation
 
@@ -768,56 +764,7 @@ database/schema.sql
 
 contains a human-readable database reference.
 
-An authoritative schema-only MySQL dump should be generated before the
-final production handover.
-
----
-
-# 18. Git and Repository Handover
-
-## Status: Documentation Milestone
-
-Before considering the repository ready for handover:
-
-```bash
-git status
-git diff
-git diff --cached
-git log --oneline --decorate -10
-git remote -v
-```
-
-Verify that the repository does not contain:
-
-* Real passwords
-* API keys
-* Secret tokens
-* `.env` files containing credentials
-* `node_modules`
-* Build output
-* IDE-specific files
-* Unapproved local-only configuration
-* Unrelated HRMS Docker configuration
-
-After review:
-
-```bash
-git add README.md docs/DEVELOPMENT_PLAN.md docs/PROJECT_HANDOVER.md database/schema.sql
-
-git commit -m "docs: complete project handover documentation"
-
-git push origin main
-```
-
-The final repository should have a clean working tree:
-
-```text
-nothing to commit, working tree clean
-```
-
----
-
-# 19. Final Definition of Done
+# 18. Final Definition of Done
 
 The website project can be considered production-ready when:
 
@@ -854,7 +801,7 @@ The website project can be considered production-ready when:
 
 ---
 
-# 20. Important Project Notes
+# 19. Important Project Notes
 
 ### This website is separate from the HRMS project
 
