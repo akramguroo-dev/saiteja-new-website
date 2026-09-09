@@ -838,7 +838,7 @@ approves the new website for production replacement.
 
 ---
 
-# 21. Related Documentation
+# 20. Related Documentation
 
 * `README.md` — project overview and developer quick-start
 * `docs/DEVELOPMENT_PLAN.md` — development roadmap and project status
